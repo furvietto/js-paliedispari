@@ -29,10 +29,6 @@ while (i < askSplit.length && condition == true) {
 const container = document.querySelector(".container")
 let ask = prompt("dimmi una parola e ti dirò se è palindroma");
 
-
-
-
-
 let reveal = trueOrFalse(ask);
 
 

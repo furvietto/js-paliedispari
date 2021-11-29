@@ -11,8 +11,6 @@ const pari = document.querySelector(".pari");
 const dispari = document.querySelector(".dispari");
 const container = document.querySelector(".container");
 
-console.log(container);
-
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
   }
