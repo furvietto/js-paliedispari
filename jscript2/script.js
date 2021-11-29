@@ -9,41 +9,49 @@
 
 const pari = document.querySelector(".pari");
 const dispari = document.querySelector(".dispari");
+const container = document.querySelector(".container");
+
+console.log(container);
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+  }
+  
 
 pari.addEventListener("click" , function () {
-    
-    const number = parseInt(prompt("inserisci un numero da 1 a 5"))
-    // while (number > 5 || number < 1) {
-    //     number = parseInt(prompt("sbagliato inserisci un numero da 1 a 5"))
-    // }
-    const computer = Math.floor(Math.random() * 5) + 1;
+ 
+    let number = parseInt(prompt("inserisci un numero da 1 a 5"))
+    while (number > 5 || number < 1) {
+        number = parseInt(prompt("sbagliato inserisci un numero da 1 a 5"))
+        console.log(number);
+    }
+
+
+    const computer = getRndInteger(1,5);
     let sum = computer + number;
 
     if (sum % 2 == 0) {
-        console.log(sum);
-        console.log("complimenti hai vinto tu")
+        container.innerHTML = `<h1>hai fatto ${number} e il computer ${computer} la somma è ${sum} hai vinto tu</h1>`
     } else {
-        console.log(sum);
-        console.log("peccato ha vinto il computer")
+        container.innerHTML = `<h1>hai fatto ${number} e il computer ${computer} la somma è ${sum} hai vinto il computer</h1>`
     }
 
 
 })
 
 dispari.addEventListener("click" , function () {
-    const number = parseInt(prompt("inserisci un numero da 1 a 5"))
-    // while (number > 5 || number < 1) {
-    //     number = parseInt(prompt("sbagliato inserisci un numero da 1 a 5"))
-    // }
-    const computer = Math.floor(Math.random() * 5) + 1;
+  
+    let number = parseInt(prompt("inserisci un numero da 1 a 5"))
+    while (number > 5 || number < 1) {
+        number = parseInt(prompt("sbagliato inserisci un numero da 1 a 5"))
+    }
+    const computer = getRndInteger(1,5);
     let sum = computer + number;
 
     
     if (sum % 2 == 1) {
-        console.log(sum);
-        console.log("complimenti hai vinto tu")
+        container.innerHTML = `<h1>hai fatto ${number} e il computer ${computer} la somma è ${sum} hai vinto tu</h1>`
     } else {
-        console.log(sum);
-        console.log("peccato ha vinto il computer")
+        container.innerHTML = `<h1>hai fatto ${number} e il computer ${computer} la somma è ${sum} hai vinto il computer</h1>`
     }
 })
