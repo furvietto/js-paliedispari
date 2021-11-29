@@ -16,6 +16,24 @@ console.log(container);
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
   }
+
+function pariFunction(sum1,number1,computer1) {
+    
+    if (sum1 % 2 == 0) {
+        container.innerHTML = `<h1>hai fatto ${number1} e il computer ${computer1} la somma è ${sum1} hai vinto tu</h1>`
+    } else {
+        container.innerHTML = `<h1>hai fatto ${number1} e il computer ${computer1} la somma è ${sum1} ha vinto il computer</h1>`
+    }
+}
+
+function dispariFunction(sum1,number1,computer1) {
+    
+    if (sum1 % 2 == 1) {
+        container.innerHTML = `<h1>hai fatto ${number1} e il computer ${computer1} la somma è ${sum1} hai vinto tu</h1>`
+    } else {
+        container.innerHTML = `<h1>hai fatto ${number1} e il computer ${computer1} la somma è ${sum1} ha vinto il computer</h1>`
+    }
+}
   
 
 pari.addEventListener("click" , function () {
@@ -30,11 +48,7 @@ pari.addEventListener("click" , function () {
     const computer = getRndInteger(1,5);
     let sum = computer + number;
 
-    if (sum % 2 == 0) {
-        container.innerHTML = `<h1>hai fatto ${number} e il computer ${computer} la somma è ${sum} hai vinto tu</h1>`
-    } else {
-        container.innerHTML = `<h1>hai fatto ${number} e il computer ${computer} la somma è ${sum} hai vinto il computer</h1>`
-    }
+    pariFunction(sum,number,computer);
 
 
 })
@@ -49,9 +63,5 @@ dispari.addEventListener("click" , function () {
     let sum = computer + number;
 
     
-    if (sum % 2 == 1) {
-        container.innerHTML = `<h1>hai fatto ${number} e il computer ${computer} la somma è ${sum} hai vinto tu</h1>`
-    } else {
-        container.innerHTML = `<h1>hai fatto ${number} e il computer ${computer} la somma è ${sum} hai vinto il computer</h1>`
-    }
+    dispariFunction(sum,number,computer)
 })
