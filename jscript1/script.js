@@ -8,7 +8,15 @@
 // 2. Scriviamo sempre solo un pezzetto di codice alla volta, se funziona allora andiamo avanti.
 // 3. Usiamo dei valori fissi che ci aiutino a controllare il funzionamento dell’algoritmo, poi sostituiamo con random e prompt
 
-
+function trueOrFalse(num1) {
+    if (num1[i] == num1[(num1.length - 1) - i]) {
+        falso = false
+        return falso
+    } else {
+        falso = true
+        return falso
+    }
+}
 
 const container = document.querySelector(".container")
 let ask = prompt("dimmi una parola e ti dirò se è palindroma");
@@ -17,11 +25,7 @@ let askSplit = ask.split("");
 let i = 0;
 let falso = false
 while (i < askSplit.length && falso == false) {
-    if (askSplit[i] == askSplit[(askSplit.length - 1) - i]) {
-        falso = false
-    } else {
-        falso = true
-    }
+    trueOrFalse(askSplit)
     i++
 }
 
